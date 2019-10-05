@@ -1,0 +1,296 @@
+main#overview-main {
+  padding: 3em 5em;
+  h1 {
+    font-size: 4rem;
+    @include mobile {
+      font-size: 3rem;
+      text-align: center;
+    }
+  }
+  #item-switch {
+    display: flex;
+    flex-direction: row;
+    width: 12vw;
+    justify-content: space-between;
+    margin: 1em 1em;
+    @include mobile {
+      justify-content: center;
+      align-content: center;
+      margin: 2rem auto;
+    }
+    div {
+      padding: 0.3em 0.3em;
+      cursor: pointer;
+    }
+    .item-switch-active {
+      border-bottom: 2px solid rgba(0, 0, 0, 0.8);
+      font-weight: bold;
+    }
+  }
+  section#overview-controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    @include mobile {
+      display: grid;
+      row-gap: 5rem;
+      justify-content: center;
+      align-content: center;
+    }
+    section#overview-controls-left {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      #little-btns-div {
+        margin-top: 0.8rem;
+      }
+      @include mobile {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 5rem;
+        align-content: center;
+        justify-content: center;
+      }
+      & div {
+        text-align: center;
+      }
+      a {
+        background-color: white;
+        border-radius: 0.3rem;
+        box-shadow: -1px 2px 3px 1px rgba(0, 0, 0, 0.1);
+        margin: 0 1rem;
+        transition: 1s ease-out;
+        cursor: default;
+        @include mobile {
+          display: inline-block;
+          margin-top: 1rem;
+        }
+      }
+      .overview-controls-focus {
+        transition: 1s ease-out;
+        background-color: var(--sidebar-color);//rgb(80, 200, 130);
+        cursor: pointer;
+      }
+      #overview-controls-sort 
+      {
+        cursor: pointer;
+        padding-left: 0.4rem;
+        padding-right: 0.4rem;
+        select
+        {
+          cursor: pointer;
+          height: 90%;
+          outline: none;
+          border: none;
+          font-size: inherit;
+          font-family: inherit;
+          font-weight: bold;
+          option
+          {
+            font-weight: bold;
+            border: none;
+            outline: none;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .little-btn {
+      padding: 1.4rem 1rem 0.6rem;
+      img {
+        margin: auto auto;
+      }
+    }
+    input {
+      margin: 0 2rem;
+      font-family: inherit;
+      vertical-align: middle;
+      font-size: 1.8rem;
+      padding: 0.5rem;
+      border-radius: 5px;
+      outline: none;
+      border: 1px solid rgb(196, 191, 191);
+      &::placeholder {
+        font-size: 1.7rem;
+        display: inline-block;
+        margin: auto;
+      }
+    }
+    #overview-add-item {
+      background-color: var(--sidebar-color);//rgb(80, 200, 130);
+      cursor: pointer;
+      color: var(--header-background);
+      outline: none;
+      border: none;
+      border-radius: 5px;
+      padding: 1rem 2rem;
+      font-family: inherit;
+      font-size: 1.8rem;
+      transition: 0.4s ease-out;
+      @include mobile {
+        display: block !important;
+        width: 70%;
+        margin: 0 auto;
+      }
+    }
+    #overview-add-item:hover {
+      box-shadow: -2px 2px 8px 2px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  table {
+    margin-top: 4rem;
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    @include mobile {
+      margin-bottom: 2rem;
+      max-width: 100vw;
+      padding: 1.5rem;
+    }
+    @media (max-width: 360px){
+      margin-left: -7rem;
+    }
+    @media (min-width: 361px) and (max-width: 420px){
+      margin-left: -5rem;
+    }
+
+    #overview-checkbox-col {
+      width: 13%;
+    }
+    #overview-type-col {
+      width: 18%;
+    }
+    #overview-desc-col {
+      width: 45%;
+    }
+
+    th {
+      padding: 1.7rem 0;
+      font-size: 2rem;
+      cursor: default;
+    }
+    td {
+      text-align: center;
+      margin: auto;
+      padding: 0.8rem 0;
+      border: none;
+    }
+    tr {
+      cursor: pointer;
+      input {
+        cursor: pointer;
+      }
+    }
+    tr:nth-child(even) {
+      background-color: rgb(240, 240, 240);
+    }
+    input {
+      font-size: 4rem;
+    }
+    .selected-row {
+      border: 1px solid dimgray;
+    }
+  }
+  #overview-info
+  {
+    display: none;
+    text-align: center;
+    margin-top: 6rem;
+    font-size: 3rem;
+    @include mobile
+    {
+      font-size: 2rem;
+      margin-top: 1rem;
+    }
+  }
+  #overview-calculate
+  {
+    background-color: var(--sidebar-color);//rgb(80, 200, 130);
+    cursor: pointer;
+    color: var(--header-background);
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    font-family: inherit;
+    font-size: 1.8rem;
+    transition: 0.4s ease-out;
+    margin-top: 4rem;
+    margin-left: 35vw;
+    @include mobile
+    {
+      margin: 1rem auto;
+      padding: 1.2rem 2rem;
+      font-size: 1.6rem;
+    }
+  }
+  #overview-calculate:hover
+  {
+    box-shadow: -2px 2px 8px 2px rgba(0, 0, 0, 0.3);
+  }
+}
+
+#overview-modal-container
+{
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  #overview-delete-modal
+  {
+    background-color: var(--header-background);
+    padding: 4rem;
+    height: 260px;
+    width: 540px;
+    margin: 30vh auto;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+    @include mobile
+    {
+      font-size: 1.3rem !important;
+      padding: 2rem;
+      height: 200px;
+      width: 400px;
+      margin: 40vh auto;
+    }
+  }
+  h1
+  {
+    margin-bottom: 5rem;
+  }
+  button
+  {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    font-family: inherit;
+    font-size: 1.8rem;
+    transition: 0.4s ease-out;
+  }
+  button:hover
+  {
+    box-shadow: -2px 2px 8px 2px rgba(0, 0, 0, 0.3);
+  }
+  #overview-delete-cancel
+  {
+    margin-left: 18vw;
+    @include mobile
+    {
+      margin-left: 33vw;
+    }
+  }
+  #overview-delete-yes
+  {
+    color: var(--header-background);
+    background-color: var(--sidebar-color);//rgb(80, 200, 130);
+    padding: 1rem 4rem;
+  }
+}
