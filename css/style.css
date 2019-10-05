@@ -392,11 +392,11 @@ aside.general-sidebar {
     .landing-header .nav-bar .nav-menu {
       list-style-type: none;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       margin-top: 3rem; }
       @media (max-width: 850px) {
         .landing-header .nav-bar .nav-menu {
-          grid-template-columns: repeat(4, 1fr);
+          grid-template-columns: repeat(5, 1fr);
           justify-content: center;
           align-content: center; } }
       .landing-header .nav-bar .nav-menu #home-nav {
